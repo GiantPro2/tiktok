@@ -13,8 +13,9 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 
   <script src="assets/js/jquery-3.6.0.js"></script>
-  <script src="assets/js/app.js" ></script>
-  <script src="assets/js/common.js" ></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/transaction.js"></script>
 
   <title>Let's Build: With Tailwind CSS - Responsive Navbar</title>
 </head>
@@ -31,13 +32,13 @@
       </div>
       <div class="sm:flex items-center gap-4 hidden">
         <button>
-          <img src="assets/images/icons/ic_chat.svg" alt="chat icon" class="w-6 h-6"/>
+          <img src="assets/images/icons/ic_chat.svg" alt="chat icon" class="w-6 h-6" />
         </button>
         <button>
-          <img src="assets/images/icons/ic_add.svg" alt="chat icon" class="w-6 h-6"/>
+          <img src="assets/images/icons/ic_add.svg" alt="chat icon" class="w-6 h-6" />
         </button>
         <button>
-          <img src="assets/images/icons/ic_notif.svg" alt="chat icon" class="w-6 h-6"/>
+          <img src="assets/images/icons/ic_notif.svg" alt="chat icon" class="w-6 h-6" />
         </button>
         <div class="flex items-center gap-2 relative">
           <div class="rounded-full border-red-500 border w-10 h-10">
@@ -45,9 +46,10 @@
           </div>
           <div class="btn-menu flex gap-1 cursor-pointer">
             <span class="font-confortaa text-md font-bold">Edshreean</span>
-            <img src="assets/images/icons/angle_down.svg" alt="down icon" class="icon-menu"/>
+            <img src="assets/images/icons/angle_down.svg" alt="down icon" class="icon-menu" />
           </div>
-          <div class="hidden toggle-menu bg-white absolute right-0 bottom-0 transform translate-y-full px-8 py-2 shadow-xl mt-4 border">
+          <div
+            class="hidden toggle-menu bg-white absolute right-0 bottom-0 transform translate-y-full px-8 py-2 shadow-xl mt-4 border">
             <ul>
               <li>
                 <a href="myprofile.html">Profile</a>
@@ -61,49 +63,84 @@
       </div>
       <!-- <button class="sm:flex px-8 xl:px-16 bg-red-500 rounded-md text-white hover:bg-red-700 py-2">Register</button> -->
       <button class="flex sm:hidden absolute right-5 menu-button" id="">
-        <img src="assets/images/menu.svg" alt="menu icon" id="menu-icon"/>
+        <img src="assets/images/menu.svg" alt="menu icon" id="menu-icon" />
       </button>
     </div>
-    <div class="hidden absolute bg-white flex flex-col h-full left-0 min-h-screen items-center right-0 shadow-lg gap-4" id="menu-mobile">
+    <div class="hidden absolute bg-white flex flex-col h-full left-0 min-h-screen items-center right-0 shadow-lg gap-4"
+      id="menu-mobile">
       <div class="category-list flex flex-col  gap-4"></div>
       <button class="px-8 xl:px-16 bg-red-500 rounded-md text-white hover:bg-red-700 py-2">Register</button>
     </div>
   </header>
 
   <main class="flex md:px-6 bg-white lg:py-0">
-    <div class="lg:px-20 hidden sm:flex sm:w-5/12 md:w-4/12 divide-y-2 mt-15 justify-center flex-col gap-10 overflow-y-auto">
+    <div
+      class="lg:px-20 hidden sm:flex sm:w-5/12 md:w-4/12 divide-y-2 mt-15 justify-center flex-col gap-10 overflow-y-auto">
       <div class="sidebar bottom-0 fixed flex h-3/4 justify-center mt-32 mb-20 overflow-y-auto top-0 ">
         <div class="flex items-start flex-col px-10 divide-y-2">
-        <div id="" class="category-list flex flex-col gap-4 xl:gap-6 pb-10">
-        </div>
-        <div class="pt-10 flex flex-col gap-5">
-          <span class="text-gray-500">Suggest People</span>
-          <div id="user-list" class="flex flex-col gap-4 xl:gap-5">
+          <div id="" class="category-list flex flex-col gap-4 xl:gap-6 pb-10">
           </div>
-          <span class="text-red-500 cursor-pointer">See all</span>
+          <div class="pt-10 flex flex-col gap-5">
+            <span class="text-gray-500">Suggest People</span>
+            <div id="user-list" class="flex flex-col gap-4 xl:gap-5">
+            </div>
+            <span class="text-red-500 cursor-pointer">See all</span>
+          </div>
         </div>
-      </div>
       </div>
     </div>
     <div class="w-full sm:w-8/12 min-h-screen ">
-      <div
-        class="flex flex-col gap-5 h-max list-container pt-24 overflow-y-auto pb-40 py-5 px-2 bg-gray-200 min-h-screen"
+      <div class="flex flex-col h-max list-container overflow-y-auto pb-40 py-5 min-h-screen"
         style="max-width: 900px;">
-        <div class="flex items-center justify-between">
-          <div class="flex gap-4 items-center cursor-pointer"><img src="assets/images/man1.png" alt="avatar"
-              class="w-10 h-10">
-            <div class="flex flex-col w-full"><span class="text-black text-md font-bold">Willsmith</span>
-              <div class="flex gap-4 items-center"><span class="text-black text-sm">Willsmith</span><img
-                  src="assets/images/flag_ca.png" alt="flag" class="rounded-sm"></div>
-            </div>
+        <div class="bg-white h-24"></div>
+        <div class="flex flex-col bg-white px-3">
+          <div class="cursor-pointer gap-3 flex py-4">
+            <img src="assets/images/icons/angle_left.svg" alt="back icon" />
+            <span class="text-xl font-bold">Transaction history</span>
           </div>
-          <div class="flex gap-1 sm:gap-4 text-white text-xs sm:text-sm">
-            <button class="rounded-md bg-red-500 px-2 sm:px-8 py-1">Accept</button>
+          <p class="text-sm">This page only shows the recharge transaction history of coin purchases you made on the
+            web. <strong>View Terms of Purchase for Coins</strong></p>
+          <div class="overflow-x-auto mt-12">
+            <table style="min-width: 800px;">
+              <tr class="">
+                <th class="pb-4 text-left w-1/12 pr-2">Amount</th>
+                <th class="pb-4 text-center w-3/12 pr-2 whitespace-nowrap">Payment method</th>
+                <th class="pb-4 text-center w-1/12 whitespace-nowrap">Payment</th>
+                <th class="pb-4 text-center w-3/12 whitespace-nowrap">Date</th>
+                <th class="pb-4 text-center w-3/12 whitespace-nowrap">Order ID</th>
+                <th class="pb-4 text-right w-1/12">Status</th>
+              </tr>
+              <tbody class="transaction-table">
+                <tr>
+                  <td class="text-left ">30 coins</td>
+                  <td class="text-center flex items-center justify-center">
+                    <img src="assets/images/icons/ic_mastercard.svg" alt="card icon" />
+                    <span>*** *** *** 239</span>
+                  </td>
+                  <td class="text-center ">€ 0.35</td>
+                  <td class="text-center whitespace-nowrap">11/28/2021 0:10 am</td>
+                  <td class="text-center ">10000000017035254546354</td>
+                  <td class="text-right ">completed</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="mt-8 ml-auto flex gap-2 items-center justify-end">
+              <span class="text-sm">Total 1</span>
+              <button class="border rounded-md w-10 h-10 flex items-center justify-center">
+                <img src="assets/images/icons/angle_left.svg" alt="previous button" />
+              </button>
+              <button class="border border-red-500 rounded-md w-10 h-10 flex items-center justify-center">
+                1
+              </button>
+              <button class="border rounded-md w-10 h-10 flex items-center justify-center">
+                <img src="assets/images/icons/angle_right.svg" alt="previous button" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </main>
 </body>
-</html>
 
+</html>
