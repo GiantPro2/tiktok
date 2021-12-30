@@ -291,7 +291,7 @@ $(document).ready(function () {
   $array = JSON.parse(userData);
   $html = "";
   $array.forEach((data, idx) => {
-    $html += '<div class="flex justify-beetween px-4 py-2 bg-white w-full gap-4 cursor-pointer"><img src="'
+    $html += '<div class="flex justify-beetween chat-user px-4 py-2 bg-white w-full gap-4 cursor-pointer" data-index='+idx+'><img src="'
     $html += data.image + '" alt="user" class="w-10 h-10"/><div class="flex flex-col w-3/4"><div class="break-all flex items-center justify-between text-sm "><span class="truncate w-1/2 font-bold">'
     $html += data.name + '</span><span class="flex-shrink-0 text-xs text-gray-500">' + data.date + '</span></div><div class="flex items-center">'
     if(data.read == "true"){
@@ -340,5 +340,12 @@ $(document).ready(function () {
     else{
       $(".menu-attach").addClass("hidden")
     }
+  })
+
+  $(".chat-user").on("click", function(){
+    var index = $(this).data("index")
+    console.log()
+    $(".selected-user-name").html(JSON.parse(userData)[index].name)
+    $(".selected-user-image").attr("src", JSON.parse(userData)[index].image)
   })
 });
