@@ -30,9 +30,9 @@
         </button>
       </div>
       <div class="sm:flex items-center gap-4 hidden">
-        <button>
-          <img src="assets/images/icons/ic_chat.svg" alt="chat icon" class="w-6 h-6"/>
-        </button>
+        <a href="chat.html">
+          <img src="assets/images/icons/ic_chat.svg" alt="chat icon" class="w-6 h-6" />
+        </a>
         <button>
           <img src="assets/images/icons/ic_notif.svg" alt="chat icon" class="w-6 h-6"/>
         </button>
@@ -84,7 +84,7 @@
     </div>
     <div class="w-full sm:w-8/12 min-h-screen ">
       <div
-        class="flex flex-col h-max list-container overflow-y-auto pb-40 py-5 min-h-screen"
+        class="flex flex-col h-max list-container overflow-y-auto py-5 min-h-screen"
         style="max-width: 900px;">
         <div class="bg-white h-24"></div>
         <div class="flex flex-col bg-white divide-y">
@@ -131,10 +131,10 @@
             <div class="h-12"></div>
             <div class="flex flex-col gap-4">
               <div class="sm:items-center flex gap-2">
-                <input type="radio" class="pb-2"/>
-                <p class="text-sm">
+                <input type="checkbox" name="term" id="term" class="pb-2" value="term"/>
+                <label for="term" class="text-sm">
                   By selecting the payment method, <strong> agree to Terms of Purchase for Coins.</strong>
-                </p>
+                </label>
               </div>
               <p class="text-sm">Total: <span class="font-bold text-md">€ 0.79</span></p>
               <button class="px-8 py-2 bg-red-500 rounded-md text-white font-bold w-max">Buy now</button>
