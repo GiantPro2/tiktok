@@ -293,7 +293,7 @@ $(document).ready(function () {
   $array.forEach((data, idx) => {
     $html += '<div class="flex justify-beetween px-4 py-2 bg-white w-full gap-4 cursor-pointer"><img src="'
     $html += data.image + '" alt="user" class="w-10 h-10"/><div class="flex flex-col w-3/4"><div class="break-all flex items-center justify-between text-sm "><span class="truncate w-1/2 font-bold">'
-    $html += data.name + '</span><span class="flex-shrik-0 text-xs text-gray-500">' + data.date + '</span></div><div class="flex items-center">'
+    $html += data.name + '</span><span class="flex-shrink-0 text-xs text-gray-500">' + data.date + '</span></div><div class="flex items-center">'
     if(data.read == "true"){
       $html += '<img src="assets/images/icons/ic_read.svg" alt="read"/>'
     }

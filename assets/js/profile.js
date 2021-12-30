@@ -257,14 +257,14 @@ $(document).ready(function () {
   $array = JSON.parse(postsData);
   $html = "";
   $array.forEach((data, idx) => {
-    $html += '<img src="'+ data.image+'" alt="post" />'
+    $html += '<img src="'+ data.image+'" alt="post"  class="w-full"/>'
   });
   $(".box-posts").html($html);
 
   $array = JSON.parse(storyData);
   $html = "";
   $array.forEach((data, idx) => {
-    $html += '<div class="inline-block snap-start text-center mr-4"><img src="'+ data.image+'" alt="story" /><span class="text-sm font-bold">'
+    $html += '<div class="inline-block snap-start text-center mr-4"><img src="'+ data.image+'" alt="story"/><span class="text-sm font-bold">'
     $html += data.name + '</span></div>'
   });
   $(".box-story").html($html);

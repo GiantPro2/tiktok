@@ -31,13 +31,10 @@
           <img src="assets/images/icons/ic_chat.svg" alt="chat icon" class="w-6 h-6"/>
         </button>
         <button>
-          <img src="assets/images/icons/ic_add.svg" alt="chat icon" class="w-6 h-6"/>
-        </button>
-        <button>
           <img src="assets/images/icons/ic_notif.svg" alt="chat icon" class="w-6 h-6"/>
         </button>
         <div class="flex items-center gap-2 relative">
-          <div class="rounded-full border-red-500 border w-10 h-10">
+          <div class="rounded-full border-red-500 border w-10 h-10 flex-shrink-0">
             <img src="assets/images/man3.png" alt="user avatar" />
           </div>
           <div class="btn-menu flex gap-1 cursor-pointer">
@@ -86,9 +83,7 @@
     <div class="w-full sm:w-8/12 min-h-screen">
       <div class="gap-5 h-max list-container mt-20 overflow-y-auto pb-40 py-5 px-4" style="max-width: 900px;">
         <div class="flex gap-4 items-start">
-          <div class="rounded-full border-2 border-red-500 hidden sm:inline-block flex-shrink-0">
-            <img src="assets/images/man3.png" alt="avatar" class="w-20 h-20" />
-          </div>
+          
           <div class="flex-col">
             <div class="sm:hidden flex items-center gap-4">
               <div class="rounded-full border-2 border-red-500 block my-2 flex-shrink-0">
@@ -102,6 +97,9 @@
             </div>
             <div class="flex flex-col sm:flex-col-reverse">
               <div class="flex flex-col">
+                <div class="rounded-full border-2 border-red-500 hidden sm:inline-block flex-shrink-0 w-max">
+                  <img src="assets/images/man3.png" alt="avatar" class="w-20 h-20" />
+                </div>
                 <span class="font-bold text-md">Will Smith</span>
                 <div class="flex items-center gap-2 ">
                   <span class="text-sm items-center flex mt-1 font-semibold">Mississippi, USA</span>
@@ -144,9 +142,7 @@
           </div>
         </div>
 
-        <div class="flex flex-col sm:ml-24 ">
-          <div class="box-story overflow-x-auto whitespace-nowrap snap-x py-4">
-          </div>
+        <div class="flex flex-col">
           <div class=" border px-4 py-6 mt-4">
             <div class="flex justify-between pb-4">
               <span class="text-md font-bold">Suggested for you</span>
