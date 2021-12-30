@@ -234,7 +234,7 @@ $(document).ready(function () {
   let rand = 0;
   $array.forEach((data,idx)=>{
     rand = parseInt(Math.random()*10%5)
-    $html += '<div class="flex py-2 justify-between items-center px-2 sm:px-8"><div class="flex items-center gap-4"><img src="'
+    $html += '<div class="flex py-2 justify-between items-center px-2 sm:mx-8"><div class="flex items-center gap-4"><img src="'
     $html += data.image + '" alt="user avatar"/><div class="flex flex-col"><p class="text-sm font-bold">'
     $html += data.name + '<span class="font-normal"> '+ data.content + '</span></p><span class="text-sm">'
     $html += data.time + '</span></div></div>'
