@@ -11,3 +11,10 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+main {
+  max-width: 1680px;
+}
+
+header {
+  max-width: 1680px;
+}
