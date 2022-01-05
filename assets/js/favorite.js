@@ -3,27 +3,27 @@ $(document).ready(function () {
   const categoryData = `[
     {
       "title":"Home",
-      "icon":"assets/images/home.png",
+      "icon":"assets/images/home.svg",
       "link":"index.html"
     },
     {
       "title":"Explore",
-      "icon":"assets/images/explore.png",
+      "icon":"assets/images/explore.svg",
       "link":"explorer.html"
     },
     {
       "title":"Followers",
-      "icon":"assets/images/following.png",
+      "icon":"assets/images/following.svg",
       "link":"followers.html"
     },
     {
       "title":"Following",
-      "icon":"assets/images/following.png",
+      "icon":"assets/images/following.svg",
       "link":"following.html"
     },
     {
       "title":"Friends",
-      "icon":"assets/images/friends.png",
+      "icon":"assets/images/friends.svg",
       "link":"friends.html"
     },
     {
