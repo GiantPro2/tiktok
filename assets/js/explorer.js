@@ -7,7 +7,7 @@ $(document).ready(function () {
     },
     {
       "title":"Explore",
-      "icon":"assets/images/explorer_active.svg",
+      "icon":"assets/images/ico_explorer_active.svg",
       "link":"explorer.html"
     },
     {
