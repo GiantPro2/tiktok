@@ -342,23 +342,43 @@ $(document).ready(function () {
   $array = JSON.parse(userData);
   $html = "";
   $array.forEach((data, idx) => {
-    $html += '<div class="flex justify-beetween chat-user px-4 py-2 bg-white w-full gap-4 cursor-pointer" data-index=' + idx + '><img src="'
-    $html += data.image + '" alt="user" class="w-10 h-10"/><div class="flex flex-col w-3/4"><div class="break-all flex items-center justify-between text-sm "><span class="truncate w-1/2 font-bold">'
+    $html += '<div class="flex relative justify-beetween chat-user px-4 py-2 bg-white w-full gap-4 cursor-pointer" data-index=' + idx + '><img src="'
+    $html += data.image + '" alt="user" class="w-10 h-10"/><div class="flex flex-col w-full"><div class="break-all flex items-center justify-between text-sm "><span class="truncate w-1/2 font-bold">'
     $html += data.name + '</span><span class="flex-shrink-0 text-xs text-gray-500">' + data.date + '</span></div><div class="flex items-center">'
-    
-    if(data.msgtype == "img"){
+
+    if (data.msgtype == "img") {
       $html += '<img src="assets/images/icons/ic_photo.svg" alt="read"/><p class="truncate text-xs text-gray-500">&nbsp;Photo</p>'
     }
-    else if(data.status == "recording"){
+    else if (data.status == "recording") {
       $html += '<img src="assets/images/icons/ic_recording.svg" alt="read"/><p class="truncate text-xs text-gray-500">&nbsp;0:14</p>'
     }
-    else if(data.status == "typing"){
+    else if (data.status == "typing") {
       $html += '<p class="text-xs text-gray-500">Typing......</p>'
     }
     else if (data.read == "true") {
       $html += '<img src="assets/images/icons/ic_read.svg" alt="read"/><p class="truncate text-xs text-gray-500">&nbsp; ' + data.msg + '</p>'
     }
-    $html += '</div></div><img src="assets/images/icons/angle_right.svg" class=""/></div>'
+    $html += `</div></div><img src="assets/images/icons/angle_right.svg" class=""/>
+      <div class="flex absolute right-0 transform translate-x-full h-full top-0">
+        <div class="cursor-pointer btn-more w-16 flex items-center justify-center flex-col bg-gray-400 text-white text-sm p-1 relative"  data-index=` + idx + `>
+          <div class="submenu-`+idx+` absolute right-0 bottom-0 transform translate-y-full hidden ">
+            <ul class="divide-y border bg-white w-48 mt-2 font-semibold text-gray-600 rounded-md">
+              <li class="cursor-pointer px-6 py-2">Mute</li>
+              <li class="cursor-pointer px-6 py-2">Contact Info</li>
+              <li class="cursor-pointer px-6 py-2">Clear Chat</li>
+              <li class="cursor-pointer px-6 py-2 text-red-500">Delete Chat</li>
+            </ul>
+          </div>
+        <img src="assets/images/icons/ic_more_white.svg" alt="more" />
+        <p>More</p>
+        </div>
+        <div class="btn-archive w-16 flex items-center justify-center flex-col bg-red-500 text-white text-sm p-1">
+        <img src="assets/images/icons/ic_inbox.svg" alt="inbox" />
+        <p>Archive</p>
+        </div>
+      </div>
+      </div>
+    `
   });
   $(".chat-users").html($html);
 
@@ -372,19 +392,19 @@ $(document).ready(function () {
       }
       else {
         $html += `<div class="bg-white p-2 flex flex-col max-w-3/4 max-w-md mr-auto rounded-md relative">
-          <div class="emoji transform translate-x-5 absolute right-0 top-1 cursor-pointer" data-index="`+idx+`">
+          <div class="emoji transform translate-x-5 absolute right-0 top-1 cursor-pointer" data-index="`+ idx + `">
             <img src="assets/images/icons/ic_emoticon.svg" alt="emoji"/>
           </div>
-          <div id="emoji-`+idx+`" class="p-1 absolute bottom-0 left-3 transform translate-y-1/2 bg-white border items-center rounded-full hidden">
+          <div id="emoji-`+ idx + `" class="p-1 absolute bottom-0 left-3 transform translate-y-1/2 bg-white border items-center rounded-full hidden">
             <p>😍</p>
           </div>
-          <div id="dialog-`+idx+`" class="dialog bg-black p-4 rounded-md absolute right-0 top-0 transform translate-x-1/2 -mr-3 -translate-y-16 flex gap-2 hidden">
+          <div id="dialog-`+ idx + `" class="dialog bg-black p-4 rounded-md absolute right-0 top-0 transform translate-x-1/2 -mr-3 -translate-y-16 flex gap-2 hidden">
             <img src="assets/images/icons/ic_prev_emoji.svg" alt="select" />
             <div class="flex gap-4 relative">
-              <p class="cursor-pointer emoticon" data-index="`+idx+`">😍</p>
-              <p class="cursor-pointer emoticon" data-index="`+idx+`">😡</p>
-              <p class="cursor-pointer emoticon" data-index="`+idx+`">🥱</p>
-              <p class="cursor-pointer emoticon" data-index="`+idx+`">😫</p>
+              <p class="cursor-pointer emoticon" data-index="`+ idx + `">😍</p>
+              <p class="cursor-pointer emoticon" data-index="`+ idx + `">😡</p>
+              <p class="cursor-pointer emoticon" data-index="`+ idx + `">🥱</p>
+              <p class="cursor-pointer emoticon" data-index="`+ idx + `">😫</p>
               <div class="bg-black w-4 h-4 absolute transform left-1/2 -translate-x-1/2 translate-y-5 rotate-45 bottom-0"></div>
             </div>
             <img src="assets/images/icons/ic_next_emoji.svg" alt="select" />
@@ -449,12 +469,19 @@ $(document).ready(function () {
 
   $(".chat-user").on("click", function () {
     var index = $(this).data("index")
+    var subid = ".submenu-"+index
     console.log()
     $(".selected-user-name").html(JSON.parse(userData)[index].name)
     $(".selected-user-image").attr("src", JSON.parse(userData)[index].image)
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) < 640) {
+      // $(".chat-mobile").addClass("hidden")
+      // $(".chat-view").removeClass("hidden")
+      $(this).addClass("transform -translate-x-32 duration-200 z-10")
+      
+    }
   })
 
-  $(".emoticon").on('click', function(){
+  $(".emoticon").on('click', function () {
     $(".dialog").removeClass("hidden")
     $(".dialog").addClass("hidden")
     var emojiId = "#emoji-" + $(this).data("index")
@@ -462,11 +489,42 @@ $(document).ready(function () {
     $(emojiId).html($(this).html())
   })
 
-  $(".emoji").on('click', function(){
+  $(".emoji").on('click', function () {
     var id = "#dialog-" + $(this).data("index")
-    
+
     console.log(id)
     $(id).removeClass("hidden")
-    
+
   })
+
+  $(".btn-cancel").on("click", function () {
+    $(".menu-attach").removeClass("hidden")
+    $(".menu-attach").addClass("hidden")
+  })
+
+  $(".btn-contact").on("click", function () {
+    console.log("kkk", (window.innerWidth > 0) ? window.innerWidth : screen.width)
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) < 640) {
+      $(".chat-mobile").removeClass("hidden")
+      $(".chat-view").addClass("hidden")
+    }
+  })
+
+
+  $(".btn-more").on("click", function(){
+    $(".mask").removeClass("hidden")
+    var index = $(this).data("index")
+    var subid = ".submenu-"+index
+    $(subid).removeClass("hidden")
+  })
+
+  $(".btn-archive").on("click", function(){
+    if (((window.innerWidth > 0) ? window.innerWidth : screen.width) < 640) {
+      $(".chat-user").removeClass("transform -translate-x-32 duration-200 z-10")
+      $(".chat-mobile").addClass("hidden")
+      $(".chat-view").removeClass("hidden")
+      $(".mask").addClass("hidden")
+    }
+  })
+
 });

@@ -37,7 +37,7 @@
           <img src="assets/images/ico_chat_active.svg" alt="chat icon" class="w-6 h-6" />
         </a>
         <a href="notification.html">
-          <img src="assets/images/icons/ic_notif.svg" alt="chat icon" class="w-6 h-6"/>
+          <img src="assets/images/icons/ic_notif.svg" alt="chat icon" class="w-6 h-6" />
         </a>
         <div class="flex items-center gap-2 relative">
           <div class="rounded-full border-red-500 border w-10 h-10 flex-shrink-0">
@@ -72,35 +72,45 @@
     </div>
   </header>
 
-  <main class="flex xl:mx-auto md:px-6 bg-white lg:py-0">
-    <div class="w-full sm:w-full" >
-      <div
-        class="flex flex-col h-max list-container overflow-y-auto bg-gray-200 mx-auto xl:w-9/12" >
-        <div class="bg-white h-24"></div>
-        <div class="flex flex-col bg-white divide-y">
+  <main class="flex xl:mx-auto md:px-6 bg-white lg:py-0 min-h-screen">
+    <div class="fixed top-20 h-screen left-0 z-0 w-screen mask hidden" style="background:rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+    <div class="w-full sm:w-full">
+      <div class="flex flex-col h-full list-container overflow-y-auto bg-gray-200 mx-auto xl:w-9/12">
+        <div class="bg-white h-20"></div>
+        <div class="sm:flex flex-col bg-white divide-y hidden">
           <div class="cursor-pointer gap-3 flex py-4 px-3">
             <img src="assets/images/icons/angle_left.svg" alt="back icon" />
-            <span class="text-xl font-bold">Chat</span>
+            <span class="text-xl font-bold text-center sm:text-left w-full">Chat</span>
           </div>
         </div>
         <div class="flex">
-          <div class="chat-users bg-gray-400 h-full divide-y border overflow-y-auto flex-shrink-0 hidden sm:flex flex-col" style="width: 300px; height: calc(100vh - 180px);">
+          <div class="chat-users h-full divide-y border overflow-y-auto flex-shrink-0 hidden sm:flex flex-col"
+            style="width: 300px; height: calc(100vh - 160px);">
           </div>
-          <div class="w-full relative">
+          <div class="chat-users chat-mobile h-full divide-y overflow-x-hidden border overflow-y-auto flex-shrink-0 hidden flex-col"
+            style="width: 100%; height: calc(100vh - 90px);">
+          </div>
+          <div class="w-full relative chat-view">
             <div class="flex justify-between items-center w-full py-2 px-8 bg-white border">
-              <div class="flex items-center gap-4 ">
-                <img src="assets/images/man5.png" alt="user" class="selected-user-image"/>
-                <span class="text-md font-bold selected-user-name">Andrew Parker</span>
+              <div class="flex gap-4 btn-contact cursor-pointer ">
+                <img src="assets/images/icons/angle_left.svg" alt="back icon" class="sm:hidden"/>
+                <div class="flex items-center gap-4 ">
+                  <img src="assets/images/man5.png" alt="user" class="selected-user-image" />
+                  <div>
+                    <span class="text-md font-bold selected-user-name">Andrew Parker</span>
+                    <p class="sm:hidden text-gray-400">Tap for the contact info</p>
+                  </div>
+                </div>
               </div>
               <div class="flex gap-4 relative">
                 <button>
-                  <img src="assets/images/icons/ic_vcall.svg" alt="vcall"/>
+                  <img src="assets/images/icons/ic_vcall.svg" alt="vcall" />
                 </button>
                 <button>
-                  <img src="assets/images/icons/ic_call.svg" alt="call"/>
+                  <img src="assets/images/icons/ic_call.svg" alt="call" />
                 </button>
                 <button class="chat-menu">
-                  <img src="assets/images/icons/ic_more_vertical.svg" alt="more"/>
+                  <img src="assets/images/icons/ic_more_vertical.svg" alt="more" />
                 </button>
                 <div class="expand-menu absolute right-0 bottom-0 transform translate-y-full hidden">
                   <ul class="divide-y border bg-white w-48 mt-2 font-semibold">
@@ -112,40 +122,47 @@
                 </div>
               </div>
             </div>
-            <div class="chat-box mb-20 overflow-y-auto px-2 pt-4 flex flex-col gap-2 "  style=" height: calc(100vh - 320px);">
+            <div class="chat-box mb-20 overflow-y-auto px-2 pt-4 flex sm:hidden flex-col gap-2 "
+              style=" height: calc(100vh - 240px);">
             </div>
-            <div class="menu-attach absolute bg-white shadow-lg p-6 rounded-md bottom-20 mx-8 left-0 right-0 hidden">
+            <div class="chat-box mb-20 overflow-y-auto px-2 pt-4 hidden sm:flex flex-col gap-2 "
+              style=" height: calc(100vh - 320px);">
+            </div>
+            <div
+              class="menu-attach absolute bg-white shadow-lg p-6 rounded-md top-1/2 transform -translate-y-1/2 sm:bottom-20 mx-8 left-0 right-0 hidden font-bold">
               <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
                 <button class="flex items-center jusitfy-center py-4 flex-col border gap-2 px-6">
                   <img src="assets/images/icons/ic_camera.svg" alt="camera" />
-                  <span class="text-sm">Camera</span>
+                  <span class="text-sm font-bold">Camera</span>
                 </button>
                 <button class="flex items-center jusitfy-center py-4 flex-col border gap-2 px-6">
                   <img src="assets/images/icons/ic_file_picture.svg" alt="camera" />
-                  <span class="text-sm">Photos</span>
+                  <span class="text-sm font-bold">Photos</span>
                 </button>
                 <button class="flex items-center jusitfy-center py-4 flex-col border gap-2 px-6">
                   <img src="assets/images/icons/ic_file_video.svg" alt="camera" />
-                  <span class="text-sm">Videos</span>
+                  <span class="text-sm font-bold">Videos</span>
                 </button>
                 <button class="flex items-center jusitfy-center py-4 flex-col border gap-2 px-6">
                   <img src="assets/images/icons/ic_file_file.svg" alt="camera" />
-                  <span class="text-sm">Document</span>
+                  <span class="text-sm font-bold">Document</span>
                 </button>
                 <button class="flex items-center jusitfy-center py-4 flex-col border gap-2 px-6">
                   <img src="assets/images/icons/ic_location.svg" alt="camera" />
-                  <span class="text-sm">Location</span>
+                  <span class="text-sm font-bold">Location</span>
                 </button>
                 <button class="flex items-center jusitfy-center py-4 flex-col border gap-2 px-6">
                   <img src="assets/images/icons/ic_contact.svg" alt="camera" />
-                  <span class="text-sm">Contact</span>
+                  <span class="text-sm font-bold">Contact</span>
                 </button>
               </div>
+              <div class="w-full py-2 bg-gray-200 rounded-md text-center mt-4 btn-cancel">Cancel</div>
             </div>
 
             <div class="absolute left-5 right-5 bottom-0 flex items-center justify-between pb-4 gap-4">
-              <div class="bg-gray-100 rounded-full border justify-between flex items-center pl-6 pr-1 py-2 border-gray-300 w-full border">
-                <input type="text" class="outline-none bg-transparent w-full" placeholder="Type a message..."/>
+              <div
+                class="bg-gray-100 rounded-full border justify-between flex items-center pl-6 pr-1 py-2 border-gray-300 w-full border">
+                <input type="text" class="outline-none bg-transparent w-full" placeholder="Type a message..." />
                 <button class="flex-shrink-0">
                   <img src="assets/images/icons/ic_emoji.svg" alt="emoji" />
                 </button>
