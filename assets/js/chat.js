@@ -391,7 +391,7 @@ $(document).ready(function () {
         $html += `<div class="bg-gray-300 p-2 flex flex-col max-w-3/4 max-w-md ml-auto rounded-md"><p>`
       }
       else {
-        $html += `<div class="bg-white p-2 flex flex-col max-w-3/4 max-w-md mr-auto rounded-md relative">
+        $html += `<div class="bg-blue-100 p-2 flex flex-col max-w-3/4 max-w-md mr-auto rounded-md relative">
           <div class="emoji transform translate-x-5 absolute right-0 top-1 cursor-pointer" data-index="`+ idx + `">
             <img src="assets/images/icons/ic_emoticon.svg" alt="emoji"/>
           </div>
