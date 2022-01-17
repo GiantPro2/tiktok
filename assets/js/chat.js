@@ -358,7 +358,7 @@ $(document).ready(function () {
     else if (data.read == "true") {
       $html += '<img src="assets/images/icons/ic_read.svg" alt="read"/><p class="truncate text-xs text-gray-500">&nbsp; ' + data.msg + '</p>'
     }
-    $html += `</div></div><img src="assets/images/icons/angle_right.svg" class=""/>
+    $html += `</div></div>
       <div class="flex absolute right-0 transform translate-x-full h-full top-0">
         <div class="cursor-pointer btn-more w-16 flex items-center justify-center flex-col bg-gray-400 text-white text-sm p-1 relative"  data-index=` + idx + `>
           <div class="submenu-`+idx+` absolute right-0 bottom-0 transform translate-y-full hidden ">
