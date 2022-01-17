@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
 
   <script src="assets/js/jquery-3.6.0.js"></script>
-  <script src="assets/js/app.js" ></script>
-  <script src="assets/js/common.js" ></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/common.js"></script>
   <script src="assets/js/chat.js"></script>
 
   <title>SwipSwop</title>
@@ -34,10 +34,10 @@
       </div>
       <div class="sm:flex items-center gap-4 hidden">
         <a href="chat.html">
-          <img src="assets/images/icons/ic_chat.svg" alt="chat icon" class="w-6 h-6" />
+          <img src="assets/images/ico_chat_active.svg" alt="chat icon" class="w-6 h-6" />
         </a>
         <a href="notification.html">
-          <img src="assets/images/icons/ic_notif.svg" alt="chat icon" class="w-6 h-6"/>
+          <img src="assets/images/icons/ic_notif.svg" alt="chat icon" class="w-6 h-6" />
         </a>
         <div class="flex items-center gap-2 relative">
           <div class="rounded-full border-red-500 border w-10 h-10 flex-shrink-0">
@@ -45,9 +45,10 @@
           </div>
           <div class="btn-menu flex gap-1 cursor-pointer">
             <span class="font-confortaa text-md font-bold">Edshreean</span>
-            <img src="assets/images/icons/angle_down.svg" alt="down icon" class="icon-menu"/>
+            <img src="assets/images/icons/angle_down.svg" alt="down icon" class="icon-menu" />
           </div>
-          <div class="hidden toggle-menu bg-white absolute right-0 bottom-0 transform translate-y-full px-8 py-2 shadow-xl mt-4 border">
+          <div
+            class="hidden toggle-menu bg-white absolute right-0 bottom-0 transform translate-y-full px-8 py-2 shadow-xl mt-4 border">
             <ul>
               <li>
                 <a href="myprofile.html">Profile</a>
@@ -61,36 +62,36 @@
       </div>
       <!-- <button class="sm:flex px-8 xl:px-16 bg-red-500 rounded-md text-white hover:bg-red-700 py-2">Register</button> -->
       <button class="flex sm:hidden absolute right-5 menu-button" id="">
-        <img src="assets/images/menu.svg" alt="menu icon" id="menu-icon"/>
+        <img src="assets/images/menu.svg" alt="menu icon" id="menu-icon" />
       </button>
     </div>
-    <div class="hidden absolute bg-white flex flex-col h-full left-0 min-h-screen items-center right-0 shadow-lg gap-4" id="menu-mobile">
+    <div class="hidden absolute bg-white flex flex-col h-full left-0 min-h-screen items-center right-0 shadow-lg gap-4"
+      id="menu-mobile">
       <div class="category-list flex flex-col  gap-4"></div>
       <button class="px-8 xl:px-16 bg-red-500 rounded-md text-white hover:bg-red-700 py-2">Register</button>
     </div>
   </header>
 
-  <main class="flex xl:mx-auto md:px-6 bg-white lg:py-0">
-    <div class="lg:px-20 hidden sm:flex sm:w-5/12 md:w-4/12 divide-y-2 mt-15 justify-center items-center flex-col gap-10 overflow-y-auto">
+  <main class="flex xl:mx-auto md:pl-7  bg-white lg:py-0 min-h-screen">
+    <div
+      class="lg:px-20 hidden sm:flex sm:w-5/12 md:w-4/12 divide-y-2 mt-15 justify-center items-center flex-col gap-10 overflow-y-auto">
       <div class="sidebar bottom-0 fixed flex h-3/4 justify-center mt-32 mb-20 overflow-y-auto top-0 ">
         <div class="flex items-start flex-col px-10 divide-y-2">
-        <div id="" class="category-list flex flex-col gap-4 xl:gap-6 pb-10">
-        </div>
-        <div class="pt-10 flex flex-col gap-5">
-          <span class="text-gray-500">Suggest People</span>
-          <div id="user-list" class="flex flex-col gap-4 xl:gap-5">
+          <div id="" class="category-list flex flex-col gap-4 xl:gap-6 pb-10">
           </div>
-          <span class="text-red-500 cursor-pointer">See all</span>
+          <div class="pt-10 flex flex-col gap-5">
+            <span class="text-gray-500">Suggest People</span>
+            <div id="user-list" class="flex flex-col gap-4 xl:gap-5">
+            </div>
+            <span class="text-red-500 cursor-pointer">See all</span>
+          </div>
         </div>
-      </div>
       </div>
     </div>
     <div class="w-full sm:w-8/12 min-h-screen ">
-      <div
-        class="flex flex-col h-max list-container overflow-y-auto min-h-screen pr-10"
-        >
-        <div class="bg-white h-24"></div>
-        <div class="flex flex-col bg-white divide-y">
+      <div class="w-full sm:w-full">
+        <div class="pt-5 px-10 flex flex-col h-full list-container overflow-y-auto bg-white mx-auto " >
+          <div class="bg-white h-24"></div>
           <div class="sm:flex flex-col bg-white divide-y hidden">
             <div class="cursor-pointer gap-3 flex py-4 px-3">
               <img src="assets/images/icons/angle_left.svg" alt="back icon" />
@@ -138,7 +139,7 @@
                 </div>
               </div>
               <div class="chat-box mb-20 overflow-y-auto px-2 pt-4 flex sm:hidden flex-col gap-2 "
-                style=" height: calc(100vh - 274px);">
+                style=" height: calc(100vh - 240px);">
               </div>
               <div class="chat-box mb-20 overflow-y-auto px-2 pt-4 hidden sm:flex flex-col gap-2 "
                 style=" height: calc(100vh - 320px);">
@@ -195,8 +196,10 @@
           </div>
         </div>
       </div>
+      <div class="fixed top-20 h-screen left-0 z-0 w-screen mask hidden"
+        style="background:rgba(0, 0, 0, 0.5); z-index: 1;"></div>
     </div>
   </main>
 </body>
-</html>
 
+</html>
